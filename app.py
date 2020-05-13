@@ -1,4 +1,3 @@
-
 import flask
 import pickle
 import pandas as pd
@@ -32,10 +31,7 @@ def main():
           prediction='moderate Risk'
         else:
           prediction='high Risk'
-
-       return flask.render_template('main.html',
-                                     result='YESSS',
-                                    )
+        return flask.render_template('main.html',result='YESSS')
     
     if __name__ == '__main__':
         app.run()
