@@ -33,7 +33,7 @@ def main():
         else:
           prediction='high Risk'
 
-        return flask.render_template('main.html', ,
+        return flask.render_template('main1.html',
                                      result='YESSS',
                                     )
     
