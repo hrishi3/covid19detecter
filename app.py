@@ -13,6 +13,7 @@ def main():
     if flask.request.method == 'GET':
         return(flask.render_template('main.html'))
     if flask.request.method == 'POST':
+        '''
         age = flask.request.form['age']
         gender = flask.request.form['gender']
         temperature = flask.request.form['temperature']
@@ -31,7 +32,8 @@ def main():
           prediction='moderate Risk'
         else:
           prediction='high Risk'
-        return flask.render_template('main1.html',result='YESSS')
+          '''
+        return flask.render_template('main1.html')
     
     if __name__ == '__main__':
         app.run()
