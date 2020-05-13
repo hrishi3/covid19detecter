@@ -13,17 +13,17 @@ def main():
     if flask.request.method == 'GET':
         return(flask.render_template('main.html'))
     if flask.request.method == 'POST':
-        '''
+        
         age = flask.request.form['age']
-        gender = flask.request.form['gender']
+        gender = flask.request.form.get('gender')
         temperature = flask.request.form['temperature']
-        cough = flask.request.form['cough']
-        throat = flask.request.form['throat']
-        weak = flask.request.form['weak']
-        breath = flask.request.form['breath']
-        drow = flask.request.form['drow']
-        pain = flask.request.form['pain']
-        red = flask.request.form['red']
+        cough = flask.request.form.get('cough')
+        throat = flask.request.form.get('throat')
+        weak = flask.request.form.get('weak')
+        breath = flask.request.form.get('breath')
+        drow = flask.request.form.get('drow')
+        pain = flask.request.form.get('pain')
+        red = flask.request.form.get('red')
        # input_variables = pd.DataFrame([[age,gender,temperature, cough,throat, weak,breath,drow,pain,red]])
         pred = model.predict([[int(age),int(gender),int(temperature), int(cough),int(throat),int( weak),int(breath),int(drow),int(pain),int(red)]])[0]
         if int(pred)==0:
@@ -32,7 +32,7 @@ def main():
           prediction='moderate Risk'
         else:
           prediction='high Risk'
-          '''
+          
         return flask.render_template('main1.html')
     
     if __name__ == '__main__':
