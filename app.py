@@ -15,6 +15,7 @@ def main():
     if flask.request.method == 'POST':
         
         age = flask.request.form['age']
+        '''
         gender = flask.request.form.get('gender')
         temprature = flask.request.form['temprature']
         cough = flask.request.form.get('cough')
@@ -32,8 +33,9 @@ def main():
           prediction='moderate Risk'
         else:
           prediction='high Risk'
+          '''
           
-        return flask.render_template('main1.html')
+        return flask.render_template('main1.html',result=age)
     
     if __name__ == '__main__':
         app.debug=True
