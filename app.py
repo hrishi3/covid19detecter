@@ -24,8 +24,8 @@ def main():
         drow = flask.request.form['drow']
         pain = flask.request.form['pain']
         red = flask.request.form['red']
-        input_variables = pd.DataFrame([[age,gender,temperature, cough,throat, weak,breath,drow,pain,red]])
-        pred = model.predict(input_variables)[0]
+       # input_variables = pd.DataFrame([[age,gender,temperature, cough,throat, weak,breath,drow,pain,red]])
+        pred = model.predict([[int(age),int(gender),int(temperature), int(cough),int(throat),int( weak),int(breath),int(drow),int(pain),int(red)]])[0]
         if int(pred)==0:
           prediction='Low Risk'
         elif int(pred)==1:
