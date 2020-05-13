@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<style>
+form {
+    margin: auto;
+    width: 35%;
+}
+
+.result {
+    margin: auto;
+    width: 35%;
+    border: 1px solid #ccc;
+}
+</style>
+
+<head>
+    <title>Covid detecter</title>
+</head>
+<form action="{{ url_for('main') }}" method="POST">
+    <fieldset>
+        <legend>Input values:</legend>
+        Age:
+        <input name="age" type="number" required>
+    <br>     <br>Gender:
+       <select id="gender" name="gender">
+  <option value="1">male</option>
+  <option value="0">female</option>
+</select> <br>
+        <br>Body Temprature:
+        <input name="temprature" type="number" required>
+       <br>  <br>Dry Cough
+<select id="cough" name="cough">
+  <option value="1">yes</option>
+  <option value="0">no</option>
+</select> <br>
+<br>Soar Throat
+<select id="throat" name="throat">
+  <option value="1">yes</option>
+  <option value="0">no</option>
+</select> <br>
+<br>Weakness
+<select id="weak" name="weak">
+  <option value="1">yes</option>
+  <option value="0">no</option>
+</select> <br>
+<br>breathing problem
+<select id="breath" name="breath">
+  <option value="1">yes</option>
+  <option value="0">no</option>
+</select> <br>
+<br>drowsiness
+<select id="drow" name="drow">
+  <option value="1">yes</option>
+  <option value="0">no</option>
+</select> <br>
+<br>chest pain
+<select id="pain" name="pain">
+  <option value="1">yes</option>
+  <option value="0">no</option>
+</select> <br>
+<br>travel to red zone
+<select id="red" name="red">
+  <option value="1">yes</option>
+  <option value="0">no</option>
+</select>
+        <br> 
+        <br>
+        <br>
+        <input type="submit">
+    </fieldset>
+</form>
+<br>
+<div class="result" align="center">
+  
+    	<br> Result:
+   		<p style="font-size:50px">{{ result }}</p>
+
+</div>
+
+</html>
