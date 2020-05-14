@@ -40,7 +40,7 @@ def main():
           '''
           
           
-        return flask.render_template('main.html',result=red)
+        return flask.render_template('main.html',result=input_variables)
     
     if __name__ == '__main__':
         app.debug=True
