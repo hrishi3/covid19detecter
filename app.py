@@ -26,8 +26,9 @@ def main():
         drow = flask.request.form.get('drow')
         pain = flask.request.form.get('pain')
         red = flask.request.form.get('red')
-        '''
+        
         input_variables = pd.DataFrame([[age,gender,temprature, cough,throat, weak,breath,drow,pain,red]])
+        '''
         pred = model.predict(input_variables)[0]
         
         if int(pred)==0:
