@@ -3,7 +3,7 @@ import pickle
 import pandas as pd
 
 # Use pickle to load in the pre-trained model
-with open(f'model/covid19detector.pkl', 'rb') as f:
+with open(f'model/covid19detector1.pkl', 'rb') as f:
     model = pickle.load(f)
 
 # Initialise the Flask app
@@ -28,7 +28,7 @@ def main():
         red = flask.request.form.get('red')
         
         input_variables = pd.DataFrame([[age,gender,temprature, cough,throat, weak,breath,drow,pain,red]])
-        '''
+        
         pred = model.predict(input_variables)[0]
         
         if int(pred)==0:
@@ -37,10 +37,10 @@ def main():
           prediction='moderate Risk'
         else:
           prediction='high Risk'
-          '''
           
           
-        return flask.render_template('main.html',result=input_variables)
+          
+        return flask.render_template('main.html',result=prediction)
     
     if __name__ == '__main__':
         app.debug=True
