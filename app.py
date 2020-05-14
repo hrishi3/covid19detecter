@@ -26,10 +26,10 @@ def main():
         drow = flask.request.form.get('drow')
         pain = flask.request.form.get('pain')
         red = flask.request.form.get('red')
-        
+        '''
         input_variables = pd.DataFrame([[age,gender,temprature, cough,throat, weak,breath,drow,pain,red]])
         pred = model.predict(input_variables)[0]
-        '''
+        
         if int(pred)==0:
           prediction='Low Risk'
         elif int(pred)==1:
@@ -39,7 +39,7 @@ def main():
           '''
           
           
-        return flask.render_template('main.html',result=pred)
+        return flask.render_template('main.html',result=red)
     
     if __name__ == '__main__':
         app.debug=True
