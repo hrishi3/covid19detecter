@@ -11,7 +11,7 @@ app = flask.Flask(__name__, template_folder='templates')
 @app.route('/', methods=['GET', 'POST'])
 def main():
     if flask.request.method == 'GET':
-        return(flask.render_template('main.html'))
+        return(flask.render_template('main1.html'))
     if flask.request.method == 'POST':
         
         age = flask.request.form['age']
@@ -40,7 +40,7 @@ def main():
           
           
           
-        return flask.render_template('main.html',result=prediction)
+        return flask.render_template('main1.html',result=prediction)
     
     if __name__ == '__main__':
         app.debug=True
