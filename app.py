@@ -3,7 +3,7 @@ import pickle
 import pandas as pd
 
 # Use pickle to load in the pre-trained model
-with open(f'model/covid19detector1.pkl', 'rb') as f:
+with open(f'model/covid19detector (1).pkl', 'rb') as f:
     model = pickle.load(f)
 
 # Initialise the Flask app
