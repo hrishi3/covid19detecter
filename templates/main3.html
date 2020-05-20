@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+<style>
+form {
+    margin: auto;
+    width: 40%;
+}
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.result {
+
+    border: 1px solid #ccc;
+}
+
+legend {
+
+
+  border-right: 1px solid  #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: .5em;
+  background-color: white;
+ width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+}
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=number], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.header {
+  padding: 5px;
+  text-align: center;
+  background: #2C6ED5;
+  color: white;
+  font-size: 30px;
+}
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+</style>
+<body style="background-color:#2C6ED5;">
+<div class="header">
+  <h1>Covid Detector</h1>
+  
+</div>
+
+<form action="{{ url_for('main') }}" method="POST">
+    <fieldset>
+      
+<div>
+	
+        <b>
+        <input name="age" type="number" placeholder="Age." required>
+    <br> <br><b>
+       <select id="gender" name="gender">
+<option disabled="disabled" selected="selected">Gender</option>
+  <option value=1>MALE</option>
+  <option value=0>FEMALE</option>
+</select> <br>
+        <br><b>
+        <input name="temprature" type="number" placeholder="Body Temprature" required>
+       <br>  <br><b>
+<select id="cough" name="cough">
+<option disabled="disabled" selected="selected">Dry Cough</option>
+  <option value=1>YES</option>
+  <option value=0>NO</option>
+</select> &nbsp &nbsp &nbsp <b>
+<select id="throat" name="throat">
+<option disabled="disabled" selected="selected">Soar Throat</option>
+  <option value=1>YES</option>
+  <option value=0>NO</option>
+</select> <br>
+<br>
+<select id="weak" name="weak">
+<option disabled="disabled" selected="selected">Weakness</option>
+  <option value=1>YES</option>
+  <option value=0>NO</option>
+</select>   &nbsp&nbsp &nbsp&nbsp &nbsp  
+<select id="breath" name="breath">
+<option disabled="disabled" selected="selected">Breathing Problem</option>
+  <option value=1>YES</option>
+  <option value=0>NO</option>
+</select> <br>
+<br>
+<select id="drow" name="drow">
+<option disabled="disabled" selected="selected">Drowsiness</option>
+  <option value=1>YES</option>
+  <option value=0>NO</option>
+</select>   &nbsp &nbsp &nbsp
+<select id="pain" name="pain">
+<option disabled="disabled" selected="selected"> Chest Pain</option>
+  <option value=1>YES</option>
+  <option value=0>NO</option>
+</select> <br>
+<br>
+<select id="red" name="red">
+<option disabled="disabled" selected="selected">Travel to Red Zone</option>
+  <option value=1>YES</option>
+  <option value=0>NO</option>
+</select>
+        <br> 
+        <br>
+        <br>
+        <input type="submit" align="center">
+    </fieldset>
+</div>
+</form>
+
+<br>
+<div>
+<div class="result" align="center">
+	 {% if result %}
+  
+    	<br> Result:
+   		<p style="font-size:50px">{{ result }}</p>
+
+{% endif %}
+
+</div>
+</div>
+
+</html>
