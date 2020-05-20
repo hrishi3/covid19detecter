@@ -34,9 +34,9 @@ def main():
         if int(pred)==0:
           prediction='Low Risk'
         elif int(pred)==1:
-          prediction='moderate to high Risk'
+          prediction='Moderate to High Risk'
         else:
-          prediction='high Risk'
+          prediction='High Risk'
           
           
           
